@@ -1,0 +1,531 @@
+/* Reset basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+#hero {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('assets/cosmic-bg.jpg') no-repeat center center/cover;
+    color: #00ffcc;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#hero .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Heading and Button Styling */
+#hero h1 {
+    font-size: 4rem;
+    text-shadow: 0px 0px 20px rgba(0, 255, 204, 0.7);
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+#enter-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #000;
+    background-color: #00ffcc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeIn 2s ease-in-out 1s;
+}
+
+#enter-btn:hover {
+    background-color: #008080;
+    color: #fff;
+}
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    background-color: #111111;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* Roadmap Section */
+#roadmap {
+    padding: 60px 20px;
+    background-color: #111111;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+#roadmap h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.roadmap-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.roadmap-item {
+    background: #222222;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 204, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.7);
+}
+
+.roadmap-item h3 {
+    font-size: 1.5rem;
+    color: #00ffcc;
+    margin-bottom: 10px;
+}
+
+/* Summon the Prophecy Section */
+#summon {
+    padding: 60px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+}
+
+#summon h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#join-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #00ffcc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#join-btn:hover {
+    background-color: #008080;
+}
+
+/* FAQ Section */
+#faq {
+    padding: 60px 20px;
+    background-color: #111111;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+#faq h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #222222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 204, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.7);
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    color: #00ffcc;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Hover effect for roadmap and FAQ boxes */
+.roadmap-item, .faq-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-item:hover, .faq-item:hover {
+    transform: scale(1.05);  /* Slightly increase size on hover */
+    box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.7);  /* Add a brighter shadow */
+}
+
+/* Glitch text effect */
+#hero h1 {
+    position: relative;
+    font-size: 4rem;
+    color: #00ffcc;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px #00ffcc, -2px -2px #ff00cc;
+    }
+    50% {
+        text-shadow: -2px -2px #00ffcc, 2px 2px #ff00cc;
+    }
+    100% {
+        text-shadow: 2px 2px #00ffcc, -2px -2px #ff00cc;
+    }
+}
+
+/* Countdown Timer */
+#countdown {
+    font-size: 1.2rem;
+    color: #00ffcc;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out 1.5s;
+    text-align: center;
+}
+
+#countdown p {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.countdown-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.countdown-item span#days, 
+.countdown-item span#hours, 
+.countdown-item span#minutes, 
+.countdown-item span#seconds {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: #222;
+    padding: 10px 15px;
+    border-radius: 8px;
+    animation: pulse 1s infinite alternate; /* Pulse animation */
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.label {
+    font-size: 1rem;
+    color: #00ffcc;
+    margin-top: 5px;
+}
+
+.divider {
+    font-size: 2rem;
+    color: #00ffcc;
+    margin: 0 5px;
+}
+
+/* Pulse animation for countdown numbers */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Flip animation */
+.flip {
+    animation: flip 0.3s ease-in-out;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0);
+    }
+}
+
+
+/* Hidden Message Icon */
+#hidden-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+#hidden-message:hover {
+    opacity: 1;
+}
+
+/* Hidden Message Text */
+#message {
+    position: fixed; /* Position it fixed so it stays in the viewport */
+    bottom: 60px; /* Position it above the icon */
+    right: 20px;
+    font-size: 1.2rem;
+    color: #00ffcc;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Same as icon to ensure visibility */
+    text-align: center;
+}
+
+
+/* Star Animation */
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkling 10s infinite ease-in-out;
+}
+
+@keyframes twinkling {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Position particles in the background */
+#particles-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#particles-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ensures particles stay in the background */
+}
+
+#hero .content {
+    position: relative;
+    z-index: 1; /* Places content above particles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Top-Left Logo Styling */
+#top-left-logo {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    width: 100px; /* Size of the logo */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+/* Footer Section */
+footer {
+    background-color: #111111;
+    padding: 30px 0;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icons a img {
+    width: 40px; /* Adjust icon size */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+
+.social-icons a img {
+    width: 40px; /* Adjust icon size as needed */
+    height: 40px;
+    filter: brightness(0) invert(1); /* Makes the icons white */
+    margin-bottom: 20px; /* Adds 20px space below each icon */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    filter: brightness(0) invert(1.2); /* Brightens icon slightly on hover */
+}
+
+/* Apply to headings and buttons */
+h1, h2, #enter-btn, #join-btn {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Apply to body text */
+body, p {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Parallax Background Effect */
+#particles-container {
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Scroll Reveal Effect */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glitch Hover Effect */
+.glitch:hover {
+    animation: glitch-animation 0.3s infinite;
+}
+
+@keyframes glitch-animation {
+    0% {
+        text-shadow: 2px 2px #ff00cc, -2px -2px #00ffcc;
+    }
+    50% {
+        text-shadow: -2px -2px #ff00cc, 2px 2px #00ffcc;
+    }
+    100% {
+        text-shadow: 2px 2px #ff00cc, -2px -2px #00ffcc;
+    }
+}
+
+
+/* Basic mobile-friendly adjustments */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #enter-btn, #join-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .footer-content p {
+        font-size: 1rem;
+    }
+}
